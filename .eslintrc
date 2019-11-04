@@ -7,11 +7,10 @@
     "document": true
   },
   "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js"]
-      }
-    ]
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/state-in-constructor": [0, "never"],
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }
