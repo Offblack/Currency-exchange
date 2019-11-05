@@ -1,11 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledWrapper = styled.div`
   max-width: 100px;
   margin: 24px 0;
   position: relative;
+
+  ${({ long }) =>
+    long &&
+    css`
+      max-width: 280px;
+      margin-right: 40px;
+    `}
 `;
 
 const StyledBar = styled.div`
@@ -45,7 +52,6 @@ const StyledInput = styled.input`
 
   :not(:placeholder-shown) + label {
     top: -22px;
-    ${({ theme }) => theme.fontSize.xxs};
   }
 
   :focus ~ div {
@@ -53,8 +59,8 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ type, name, label, ...props }) => (
-  <StyledWrapper>
+const Input = ({ type, name, label, long, ...props }) => (
+  <StyledWrapper long={long}>
     <StyledInput type={type} name={name} id={name} required placeholder=" " {...props} />
     <StyledLabel htmlFor={name}>{label}</StyledLabel>
     <StyledBar />
@@ -65,6 +71,11 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  long: PropTypes.bool,
+};
+
+Input.defaultProps = {
+  long: false,
 };
 
 export default Input;
