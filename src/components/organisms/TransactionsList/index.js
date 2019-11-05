@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Transaction from 'components/molecules/Transaction';
-// import { connect } from 'react-redux';
-// import { getItems as getItemsAction } from 'src/actions';
+import { connect } from 'react-redux';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -29,71 +28,35 @@ const StyledList = styled.ul`
   }
 `;
 
-const dummyData = [
-  {
-    id: 1,
-    title: 'First pay',
-    euro: 23,
-  },
-  {
-    id: 2,
-    title: 'Value change',
-    euro: 63,
-  },
-  {
-    id: 3,
-    title: 'Second',
-    euro: 14,
-  },
-  {
-    id: 4,
-    title: 'No money',
-    euro: 88,
-  },
-];
+const TransactionsList = ({ state }) => {
+  const { transactions, pln } = state;
+  return (
+    <StyledWrapper>
+      <h2>Historia transakcji</h2>
+      <StyledList>
+        {transactions.map(transaction => (
+          <Transaction
+            id={transaction.id}
+            title={transaction.title}
+            euro={transaction.euro}
+            pln={Math.round(transaction.euro * pln * 100) / 100}
+            key={transaction.id}
+          />
+        ))}
+      </StyledList>
+    </StyledWrapper>
+  );
+};
 
-class TransactionsList extends Component {
-  state = {
-    example: '',
-  };
-  //   componentDidMount() {
-  //     this.props.getItems();
-  //   }
+TransactionsList.propTypes = {
+  state: PropTypes.shape({
+    pln: PropTypes.number,
+    transactions: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
+};
 
-  render() {
-    //  const { data } = this.props;
+const mapStateToProps = state => {
+  return { state };
+};
 
-    return (
-      <StyledWrapper>
-        <h2>Historia transakcji</h2>
-        <StyledList>
-          {dummyData.map(transaction => (
-            <Transaction
-              id={transaction.id}
-              title={transaction.title}
-              euro={transaction.euro}
-              pln={transaction.euro * 4.25}
-              key={transaction.id}
-            />
-          ))}
-        </StyledList>
-      </StyledWrapper>
-    );
-  }
-}
-
-// const mapStateToProps = state => {
-//   const { data } = state;
-//   return { data };
-// };
-
-// const mapDispatchToProps = dispatch => ({
-//   getItems: () => dispatch(getItemsAction()),
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps,
-// )(EstatesList);
-
-export default TransactionsList;
+export default connect(mapStateToProps)(TransactionsList);

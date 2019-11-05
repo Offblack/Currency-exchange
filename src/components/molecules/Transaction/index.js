@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/atoms/Button';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { removeItem as removeItemAction } from 'src/actions';
+import { connect } from 'react-redux';
+import { removeItem as removeItemAction } from 'actions';
 
 const StyledTransaction = styled.li`
   @keyframes appear {
@@ -67,7 +67,7 @@ const StyledTitle = styled.h2`
   }
 `;
 
-const Transaction = ({ id, title, euro, pln }) => (
+const Transaction = ({ id, title, euro, pln, removeItem }) => (
   <StyledTransaction>
     <StyledWrapper id={id}>
       <StyledTop>
@@ -77,25 +77,24 @@ const Transaction = ({ id, title, euro, pln }) => (
           <p>PLN {pln}</p>
         </StyledCurrency>
       </StyledTop>
-      <Button>Usuń</Button>
+      <Button onClick={() => removeItem(id)}>Usuń</Button>
     </StyledWrapper>
   </StyledTransaction>
 );
 
 Transaction.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   euro: PropTypes.number.isRequired,
   pln: PropTypes.number.isRequired,
+  removeItem: PropTypes.func.isRequired,
 };
 
-// const mapDispatchToProps = dispatch => ({
-//   removeItem: id => dispatch(removeItemAction(id)),
-// });
+const mapDispatchToProps = dispatch => ({
+  removeItem: id => dispatch(removeItemAction(id)),
+});
 
-// export default connect(
-//   null,
-//   mapDispatchToProps,
-// )(EstateItem);
-
-export default Transaction;
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Transaction);

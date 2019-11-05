@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Input from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 import { Formik } from 'formik';
-// import { connect } from 'react-redux';
-// import { addItem as addItemAction } from 'src/actions';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addItem as addItemAction } from 'actions';
+import PropTypes from 'prop-types';
 
 const StyledWrapper = styled.div`
   @keyframes appear {
@@ -50,7 +50,7 @@ const StyledHeader = styled.h1`
   margin: 30px;
 `;
 
-const TransactionForm = () => (
+const TransactionForm = ({ addItem }) => (
   <StyledWrapper>
     <StyledHeader>Dodaj transakcję</StyledHeader>
     <Formik
@@ -59,7 +59,7 @@ const TransactionForm = () => (
         euro: '0',
       }}
       onSubmit={(values, actions) => {
-        console.log(values);
+        addItem(values);
         actions.setSubmitting(false);
         actions.resetForm();
       }}
@@ -96,17 +96,15 @@ const TransactionForm = () => (
   </StyledWrapper>
 );
 
-// AddForm.propTypes = {
-//   addItem: PropTypes.func.isRequired,
-// };
+TransactionForm.propTypes = {
+  addItem: PropTypes.func.isRequired,
+};
 
-// const mapDispatchToProps = dispatch => ({
-//   addItem: values => dispatch(addItemAction(values)),
-// });
+const mapDispatchToProps = dispatch => ({
+  addItem: values => dispatch(addItemAction(values)),
+});
 
-// export default connect(
-//   null,
-//   mapDispatchToProps,
-// )(AddForm);
-
-export default TransactionForm;
+export default connect(
+  null,
+  mapDispatchToProps,
+)(TransactionForm);

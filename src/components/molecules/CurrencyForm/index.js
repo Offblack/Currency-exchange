@@ -6,9 +6,9 @@ import { Formik } from 'formik';
 import arrowsIcon from 'assets/images/arrows.svg';
 import europeIcon from 'assets/images/europe.svg';
 import polandIcon from 'assets/images/poland.svg';
-// import { connect } from 'react-redux';
-// import { addItem as addItemAction } from 'src/actions';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { changeValue as changeValueAction } from 'actions';
+import PropTypes from 'prop-types';
 
 const StyledWrapper = styled.div`
   @keyframes appear {
@@ -67,7 +67,7 @@ const StyledCurrency = styled.img`
   animation: appear 0.6s ease-in-out;
 `;
 
-const CurrencyForm = () => (
+const CurrencyForm = ({ changeValue }) => (
   <StyledWrapper>
     <StyledHeader>Przelicznik walutowy</StyledHeader>
     <Formik
@@ -75,9 +75,8 @@ const CurrencyForm = () => (
         pln: 4.25,
       }}
       onSubmit={(values, actions) => {
-        console.log(values);
+        changeValue(values);
         actions.setSubmitting(false);
-        actions.resetForm();
       }}
     >
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
@@ -115,17 +114,15 @@ const CurrencyForm = () => (
   </StyledWrapper>
 );
 
-// AddForm.propTypes = {
-//   addItem: PropTypes.func.isRequired,
-// };
+CurrencyForm.propTypes = {
+  changeValue: PropTypes.func.isRequired,
+};
 
-// const mapDispatchToProps = dispatch => ({
-//   addItem: values => dispatch(addItemAction(values)),
-// });
+const mapDispatchToProps = dispatch => ({
+  changeValue: values => dispatch(changeValueAction(values)),
+});
 
-// export default connect(
-//   null,
-//   mapDispatchToProps,
-// )(AddForm);
-
-export default CurrencyForm;
+export default connect(
+  null,
+  mapDispatchToProps,
+)(CurrencyForm);
