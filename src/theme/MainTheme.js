@@ -6,7 +6,7 @@ export const theme = {
   grey300: '#383838',
   grey400: '#191919',
   fontSize: {
-    xxs: '0.6rem',
+    xxs: '0.8rem',
     xs: '1rem',
     s: '1.4rem',
     m: '1.8rem',

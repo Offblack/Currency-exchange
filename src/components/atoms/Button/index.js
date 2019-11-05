@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   display: flex;
@@ -18,10 +18,17 @@ const Button = styled.button`
   outline: 0;
   cursor: pointer;
   transition: background 0.4s ease-in-out;
+  font-weight: 700;
 
   :hover {
     background-color: ${({ theme }) => theme.lightBlue};
   }
+
+  ${({ small }) =>
+    small &&
+    css`
+      font-size: ${({ theme }) => theme.fontSize.xxs};
+    `}
 `;
 
 export default Button;

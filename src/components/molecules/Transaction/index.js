@@ -53,6 +53,7 @@ const StyledCurrency = styled.div`
   p {
     padding: 0;
     margin: 0;
+    text-align: right;
   }
 `;
 
@@ -77,7 +78,9 @@ const Transaction = ({ id, title, euro, pln, removeItem }) => (
           <p>PLN {pln}</p>
         </StyledCurrency>
       </StyledTop>
-      <Button onClick={() => removeItem(id)}>Usuń</Button>
+      <Button small onClick={() => removeItem(id)}>
+        Usuń
+      </Button>
     </StyledWrapper>
   </StyledTransaction>
 );
