@@ -43,6 +43,12 @@ const StyledFields = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const StyledHeader = styled.h1`

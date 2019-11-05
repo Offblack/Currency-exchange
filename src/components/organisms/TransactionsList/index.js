@@ -5,6 +5,7 @@ import Transaction from 'components/molecules/Transaction';
 import { connect } from 'react-redux';
 
 const StyledWrapper = styled.div`
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +33,7 @@ const TransactionsList = ({ state }) => {
   const { transactions, pln } = state;
   return (
     <StyledWrapper>
-      <h2>Historia transakcji</h2>
+      <h1>Historia transakcji</h1>
       <StyledList>
         {transactions.map(transaction => (
           <Transaction

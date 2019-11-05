@@ -45,6 +45,12 @@ const StyledForm = styled.form`
 const StyledFields = styled.div`
   display: flex;
   justify-content: center;
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const StyledHeader = styled.h1`

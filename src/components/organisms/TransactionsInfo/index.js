@@ -6,7 +6,7 @@ import ValueSummary from 'components/molecules/ValueSummary';
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  margin: 10px;
   position: relative;
 
   &::before {
@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
     height: 3px;
     background-color: ${({ theme }) => theme.mainBlue};
   }

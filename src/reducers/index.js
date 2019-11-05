@@ -3,22 +3,32 @@ const initialState = {
   transactions: [
     {
       id: 's1',
-      title: 'First pay',
+      title: 'Pierwsza wpłata',
       euro: 23,
     },
     {
       id: 's2',
-      title: 'Value change',
+      title: 'Zagraniczny przelew',
       euro: 63,
     },
     {
       id: 's3',
-      title: 'Second',
+      title: 'Zwrot podatku',
       euro: 14,
     },
     {
       id: 's4',
-      title: 'No money',
+      title: 'Przelew od siostry',
+      euro: 88,
+    },
+    {
+      id: 's5',
+      title: 'Przelew od brata',
+      euro: 88,
+    },
+    {
+      id: 's6',
+      title: 'Koszty paliwa',
       euro: 88,
     },
   ],

@@ -15,10 +15,12 @@ const Root = () => (
     <ThemeProvider theme={theme}>
       <MainTemplate>
         <GlobalStyle />
-        <CurrencyForm />
-        <TransactionForm />
+        <div>
+          <CurrencyForm />
+          <TransactionForm />
+          <TransactionsInfo />
+        </div>
         <TransactionsList />
-        <TransactionsInfo />
       </MainTemplate>
     </ThemeProvider>
   </Provider>
