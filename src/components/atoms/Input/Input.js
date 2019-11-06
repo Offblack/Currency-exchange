@@ -45,7 +45,6 @@ const StyledInput = styled.input`
 
   :focus {
     outline: none;
-    color: $grey400;
   }
 
   :focus + label {

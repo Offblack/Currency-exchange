@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import TopTransaction from 'components/molecules/TopTransaction';
-import ValueSummary from 'components/molecules/ValueSummary';
+import TopTransaction from 'components/molecules/TopTransaction/TopTransaction';
+import ValueSummary from 'components/molecules/ValueSummary/ValueSummary';
 
 const StyledWrapper = styled.div`
   display: flex;

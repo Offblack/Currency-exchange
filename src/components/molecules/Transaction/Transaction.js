@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from 'components/atoms/Button';
+import Button from 'components/atoms/Button/Button';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeItem as removeItemAction } from 'actions';
-import Title from 'components/atoms/Title';
+import Title from 'components/atoms/Title/Title';
 
 const StyledTransaction = styled.li`
   @keyframes appear {

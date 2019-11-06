@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Input from 'components/atoms/Input';
-import Button from 'components/atoms/Button';
+import Input from 'components/atoms/Input/Input';
+import Button from 'components/atoms/Button/Button';
 import { Formik } from 'formik';
 import { connect } from 'react-redux';
 import { addItem as addItemAction } from 'actions';

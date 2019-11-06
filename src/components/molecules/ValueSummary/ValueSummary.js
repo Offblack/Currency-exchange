@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Title from 'components/atoms/Title';
+import Title from 'components/atoms/Title/Title';
 
 const StyledTransaction = styled.div`
   @keyframes appear {

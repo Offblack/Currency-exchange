@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Transaction from 'components/molecules/Transaction';
+import Transaction from 'components/molecules/Transaction/Transaction';
 import { connect } from 'react-redux';
 
 const StyledWrapper = styled.div`

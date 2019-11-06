@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Title from 'components/atoms/Title';
+import Title from 'components/atoms/Title/Title';
 
 const StyledTransaction = styled.div`
   @keyframes appear {
@@ -37,12 +37,15 @@ const StyledTop = styled.div`
   display: flex;
   padding-top: 20px;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    justify-content: space-around;
+  }
 `;
 
 const StyledCurrency = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 
   p {
     padding: 0;

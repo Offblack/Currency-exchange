@@ -25,6 +25,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@testing-library/react": "^9.3.2",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
