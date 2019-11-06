@@ -5,7 +5,7 @@ import { theme } from 'theme/mainTheme';
 import Title from './Title';
 
 describe('Title Component', () => {
-  it('Renders without crushing', () => {
+  it('renders without crushing', () => {
     render(
       <ThemeProvider theme={theme}>
         <Title>Hello</Title>
@@ -13,7 +13,7 @@ describe('Title Component', () => {
     );
   });
 
-  it('Renders children text', () => {
+  it('renders children text', () => {
     const { getByText } = render(
       <ThemeProvider theme={theme}>
         <Title>Hello</Title>

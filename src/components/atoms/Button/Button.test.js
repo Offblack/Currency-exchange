@@ -5,7 +5,7 @@ import { theme } from 'theme/mainTheme';
 import Button from './Button';
 
 describe('Button Component', () => {
-  it('Renders without crushing', () => {
+  it('renders without crushing', () => {
     render(
       <ThemeProvider theme={theme}>
         <Button>Remove</Button>
@@ -13,7 +13,7 @@ describe('Button Component', () => {
     );
   });
 
-  it('Renders children text', () => {
+  it('renders children text', () => {
     const { getByText } = render(
       <ThemeProvider theme={theme}>
         <Button>Remove</Button>
