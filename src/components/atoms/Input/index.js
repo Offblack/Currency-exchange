@@ -21,12 +21,12 @@ const StyledWrapper = styled.div`
 const StyledBar = styled.div`
   width: 100%;
   height: 2px;
-  background: ${({ theme }) => theme.grey200};
+  background: ${({ theme }) => theme.grey};
   transition: 0.1s all;
 `;
 
 const StyledLabel = styled.label`
-  color: #7d7d7d;
+  color: ${({ theme }) => theme.grey};
   position: absolute;
   top: 3px;
   left: 0;
@@ -50,7 +50,7 @@ const StyledInput = styled.input`
 
   :focus + label {
     top: -22px;
-    font-size: 13px;
+    font-size: ${({ theme }) => theme.fontSize.xxs};
   }
 
   :not(:placeholder-shown) + label {

@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Title from 'components/atoms/Title';
 
 const StyledTransaction = styled.div`
   @keyframes appear {
@@ -50,26 +51,6 @@ const StyledCurrency = styled.div`
   }
 `;
 
-const StyledTitle = styled.h2`
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  padding: 0;
-  margin: 0;
-  text-align: center;
-
-  @media (max-width: 468px) {
-    font-size: 18px;
-  }
-
-  ${({ secondary }) =>
-    secondary &&
-    css`
-      font-size: ${({ theme }) => theme.fontSize.s};
-      color: ${({ theme }) => theme.mainBlue};
-      font-weight: 500;
-    `}
-`;
-
 const TopTransaction = ({ state }) => {
   const { transactions, pln } = state;
   const transaction = transactions.reduce((prev, current) => {
@@ -78,9 +59,9 @@ const TopTransaction = ({ state }) => {
 
   return (
     <StyledTransaction>
-      <StyledTitle>Najwyższa transakcja:</StyledTitle>
+      <Title>Najwyższa transakcja:</Title>
       <StyledTop>
-        <StyledTitle secondary>{transaction.title}</StyledTitle>
+        <Title secondary>{transaction.title}</Title>
         <StyledCurrency>
           <p>€ {transaction.euro}</p>
           <p>PLN {Math.round(transaction.euro * pln * 100) / 100}</p>

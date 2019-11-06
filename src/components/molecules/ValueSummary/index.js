@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Title from 'components/atoms/Title';
 
 const StyledTransaction = styled.div`
   @keyframes appear {
@@ -49,17 +50,6 @@ const StyledCurrency = styled.div`
   }
 `;
 
-const StyledTitle = styled.h2`
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  padding: 0;
-  margin: 0;
-
-  @media (max-width: 468px) {
-    font-size: 18px;
-  }
-`;
-
 const ValueSummary = ({ state }) => {
   const { transactions, pln } = state;
   const transaction = transactions.reduce((prev, current) => {
@@ -68,7 +58,7 @@ const ValueSummary = ({ state }) => {
 
   return (
     <StyledTransaction>
-      <StyledTitle>Suma transakcji:</StyledTitle>
+      <Title>Suma transakcji:</Title>
       <StyledCurrency>
         <p>€ {transaction.euro}</p>
         <p>PLN {Math.round(transaction.euro * pln * 100) / 100}</p>

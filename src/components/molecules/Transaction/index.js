@@ -4,6 +4,7 @@ import Button from 'components/atoms/Button';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeItem as removeItemAction } from 'actions';
+import Title from 'components/atoms/Title';
 
 const StyledTransaction = styled.li`
   @keyframes appear {
@@ -58,22 +59,11 @@ const StyledCurrency = styled.div`
   }
 `;
 
-const StyledTitle = styled.h2`
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  padding: 0;
-  margin: 10px 0;
-
-  @media (max-width: 468px) {
-    font-size: 18px;
-  }
-`;
-
 const Transaction = ({ id, title, euro, pln, removeItem }) => (
   <StyledTransaction>
     <StyledWrapper id={id}>
       <StyledTop>
-        <StyledTitle>{title}</StyledTitle>
+        <Title>{title}</Title>
         <StyledCurrency>
           <p>€ {euro}</p>
           <p>PLN {pln}</p>
