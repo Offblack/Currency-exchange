@@ -24,12 +24,12 @@ const initialState = {
     {
       id: 's5',
       title: 'Przelew od brata',
-      euro: 88,
+      euro: 62,
     },
     {
       id: 's6',
       title: 'Koszty paliwa',
-      euro: 88,
+      euro: 13,
     },
   ],
 };
