@@ -12,6 +12,9 @@ const StyledWrapper = styled.div`
     css`
       max-width: 280px;
       margin-right: 40px;
+      @media (max-width: 768px) {
+        margin-right: 0;
+      }
     `}
 `;
 

@@ -59,6 +59,10 @@ const StyledFields = styled.div`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledHeader = styled.h1`
@@ -75,6 +79,10 @@ const StyledArrows = styled.img`
   height: auto;
   margin: 0 50px;
   opacity: 0.3;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledCurrency = styled.img`
@@ -83,6 +91,10 @@ const StyledCurrency = styled.img`
   position: relative;
   left: 90px;
   animation: appear 0.6s ease-in-out;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const CurrencyForm = ({ changeValue }) => (
