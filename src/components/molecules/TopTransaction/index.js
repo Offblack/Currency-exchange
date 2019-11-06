@@ -25,7 +25,9 @@ const StyledTransaction = styled.div`
   font-size: ${({ theme }) => theme.fontSize.xs};
 
   @media (max-width: 768px) {
-    width: 90vw;
+    width: 100%;
+    margin: 25px 0 0 0;
+    padding: 25px 10px 5px 10px;
   }
 `;
 

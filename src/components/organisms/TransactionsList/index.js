@@ -5,18 +5,19 @@ import Transaction from 'components/molecules/Transaction';
 import { connect } from 'react-redux';
 
 const StyledWrapper = styled.div`
+  width: 60%;
   margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 768px) {
-    width: 90vw;
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `;
 
 const StyledList = styled.ul`
-  max-width: 1100px;
+  width: 100%;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -24,8 +25,9 @@ const StyledList = styled.ul`
   list-style-type: none;
 
   @media (max-width: 768px) {
-    width: 100%;
+    fllex-direction: column;
     align-items: center;
+    margin: 0;
   }
 `;
 

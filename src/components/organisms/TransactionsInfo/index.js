@@ -20,6 +20,14 @@ const StyledWrapper = styled.div`
     height: 3px;
     background-color: ${({ theme }) => theme.mainBlue};
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const TransactionsInfo = () => (

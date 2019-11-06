@@ -26,6 +26,12 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const StyledForm = styled.form`
@@ -39,6 +45,8 @@ const StyledForm = styled.form`
 
   @media (max-width: 768px) {
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -56,6 +64,10 @@ const StyledFields = styled.div`
 const StyledHeader = styled.h1`
   text-align: center;
   margin: 50px;
+
+  @media (max-width: 768px) {
+    margin: 30px 0;
+  }
 `;
 
 const StyledArrows = styled.img`

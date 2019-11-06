@@ -25,7 +25,8 @@ const StyledTransaction = styled.li`
   animation: appear 0.8s ease-in-out;
 
   @media (max-width: 768px) {
-    width: 90vw;
+    width: 90%;
+    margin: 20px 0;
   }
 `;
 

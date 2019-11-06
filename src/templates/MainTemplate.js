@@ -7,6 +7,12 @@ const StyledWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const MainTemplate = ({ children }) => <StyledWrapper>{children}</StyledWrapper>;

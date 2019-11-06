@@ -25,7 +25,11 @@ const StyledTransaction = styled.div`
   font-size: ${({ theme }) => theme.fontSize.xs};
 
   @media (max-width: 768px) {
-    width: 90vw;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
   }
 `;
 
@@ -38,6 +42,10 @@ const StyledCurrency = styled.div`
     padding: 0;
     margin: 0;
     text-align: right;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 `;
 
