@@ -55,6 +55,10 @@ const StyledFields = styled.div`
     margin: 0;
   }
 
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
