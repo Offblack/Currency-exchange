@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button/Button';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
 import { connect } from 'react-redux';
 import { addItem as addItemAction } from 'actions';
 import PropTypes from 'prop-types';
@@ -48,6 +49,7 @@ const StyledFields = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
@@ -70,6 +72,27 @@ const StyledHeader = styled.h1`
   margin: 30px;
 `;
 
+const StyledValidation = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.xxs};
+  color: ${({ theme }) => theme.mainBlue};
+  position: absolute;
+  left: 0;
+  top: 80px;
+
+  @media (max-width: 768px) {
+    top: 75px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+`;
+
+const ItemSchema = Yup.object().shape({
+  title: Yup.string()
+    .min(2, 'Title is too short!')
+    .max(16, 'Title is too long!'),
+});
+
 const TransactionForm = ({ addItem }) => (
   <StyledWrapper>
     <StyledHeader>Dodaj transakcję</StyledHeader>
@@ -78,13 +101,14 @@ const TransactionForm = ({ addItem }) => (
         title: '',
         euro: '0',
       }}
+      validationSchema={ItemSchema}
       onSubmit={(values, actions) => {
         addItem(values);
         actions.setSubmitting(false);
         actions.resetForm();
       }}
     >
-      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, errors, touched }) => (
         <StyledForm onSubmit={handleSubmit} data-testid="form-2">
           <StyledFields>
             <Input
@@ -97,6 +121,9 @@ const TransactionForm = ({ addItem }) => (
               long
               required
             />
+            {errors.title && touched.title ? (
+              <StyledValidation>{errors.title}</StyledValidation>
+            ) : null}
             <Input
               type="number"
               name="euro"

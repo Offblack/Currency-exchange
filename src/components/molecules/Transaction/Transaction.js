@@ -45,6 +45,7 @@ const StyledTop = styled.div`
   align-items: center;
   justify-content: space-around;
   margin: 10px 0;
+  padding: 0 10px;
 `;
 
 const StyledCurrency = styled.div`
