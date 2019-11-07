@@ -11,8 +11,12 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1196px) {
     width: 100%;
+  }
+
+  @media (max-width: 1378px) {
+    width: 80%;
   }
 `;
 
