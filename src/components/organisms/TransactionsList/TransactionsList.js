@@ -34,7 +34,7 @@ const StyledList = styled.ul`
 const TransactionsList = ({ state }) => {
   const { transactions, pln } = state;
   return (
-    <StyledWrapper>
+    <StyledWrapper data-testid="list-1">
       <h1>Historia transakcji</h1>
       <StyledList>
         {transactions.map(transaction => (

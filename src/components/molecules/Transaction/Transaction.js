@@ -61,7 +61,7 @@ const StyledCurrency = styled.div`
 
 const Transaction = ({ id, title, euro, pln, removeItem }) => (
   <StyledTransaction>
-    <StyledWrapper id={id}>
+    <StyledWrapper id={id} data-testid="transaction-1">
       <StyledTop>
         <Title>{title}</Title>
         <StyledCurrency>

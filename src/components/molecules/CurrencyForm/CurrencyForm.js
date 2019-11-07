@@ -110,7 +110,7 @@ const CurrencyForm = ({ changeValue }) => (
       }}
     >
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm data-testid="form-1" onSubmit={handleSubmit}>
           <StyledFields>
             <StyledCurrency src={europeIcon} alt="europe-icon" />
             <Input

@@ -81,7 +81,7 @@ const TransactionForm = ({ addItem }) => (
       }}
     >
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleSubmit} data-testid="form-2">
           <StyledFields>
             <Input
               type="text"

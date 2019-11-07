@@ -61,7 +61,7 @@ const TopTransaction = ({ state }) => {
   });
 
   return (
-    <StyledTransaction>
+    <StyledTransaction data-testid="top-1">
       <Title>Najwyższa transakcja:</Title>
       <StyledTop>
         <Title secondary>{transaction.title}</Title>

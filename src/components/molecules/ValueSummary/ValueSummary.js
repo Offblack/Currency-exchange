@@ -57,7 +57,7 @@ const ValueSummary = ({ state }) => {
   });
 
   return (
-    <StyledTransaction>
+    <StyledTransaction data-testid="value-1">
       <Title>Suma transakcji:</Title>
       <StyledCurrency>
         <p>€ {transaction.euro}</p>

@@ -31,7 +31,7 @@ const StyledWrapper = styled.div`
 `;
 
 const TransactionsInfo = () => (
-  <StyledWrapper>
+  <StyledWrapper data-testid="info-1">
     <TopTransaction />
     <ValueSummary />
   </StyledWrapper>
