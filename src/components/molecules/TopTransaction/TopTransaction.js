@@ -46,6 +46,7 @@ const StyledTop = styled.div`
 const StyledCurrency = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 5px;
 
   p {
     padding: 0;

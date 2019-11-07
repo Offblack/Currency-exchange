@@ -14,6 +14,7 @@ const Title = styled.h2`
       color: ${({ theme }) => theme.mainBlue};
       font-weight: 500;
       max-width: 150px;
+      text-align: left;
     `}
 
   @media (max-width: 768px) {
