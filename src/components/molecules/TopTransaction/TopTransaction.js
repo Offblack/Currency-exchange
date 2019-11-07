@@ -56,9 +56,14 @@ const StyledCurrency = styled.div`
 
 const TopTransaction = ({ state }) => {
   const { transactions, pln } = state;
-  const transaction = transactions.reduce((prev, current) => {
-    return prev.euro > current.euro ? prev : current;
-  });
+  let transaction = {};
+  if (transactions.length === 0) {
+    transaction = { title: 'Brak transakcji', euro: 0 };
+  } else {
+    transaction = transactions.reduce((prev, current) => {
+      return prev.euro > current.euro ? prev : current;
+    });
+  }
 
   return (
     <StyledTransaction data-testid="top-1">

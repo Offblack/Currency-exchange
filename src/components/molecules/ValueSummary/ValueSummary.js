@@ -52,9 +52,14 @@ const StyledCurrency = styled.div`
 
 const ValueSummary = ({ state }) => {
   const { transactions, pln } = state;
-  const transaction = transactions.reduce((prev, current) => {
-    return { euro: prev.euro + current.euro };
-  });
+  let transaction = {};
+  if (transactions.length === 0) {
+    transaction = { euro: 0 };
+  } else {
+    transaction = transactions.reduce((prev, current) => {
+      return { euro: prev.euro + current.euro };
+    });
+  }
 
   return (
     <StyledTransaction data-testid="value-1">
