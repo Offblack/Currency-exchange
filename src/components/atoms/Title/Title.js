@@ -13,6 +13,7 @@ const Title = styled.h2`
       font-size: ${({ theme }) => theme.fontSize.s};
       color: ${({ theme }) => theme.mainBlue};
       font-weight: 500;
+      max-width: 150px;
     `}
 
   @media (max-width: 768px) {
