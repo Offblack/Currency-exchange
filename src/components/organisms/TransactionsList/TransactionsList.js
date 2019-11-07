@@ -41,7 +41,7 @@ const TransactionsList = ({ state }) => {
           <Transaction
             id={transaction.id}
             title={transaction.title}
-            euro={transaction.euro}
+            euro={Math.round(transaction.euro * 100) / 100}
             pln={Math.round(transaction.euro * pln * 100) / 100}
             key={transaction.id}
           />

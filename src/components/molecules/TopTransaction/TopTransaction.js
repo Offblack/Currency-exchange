@@ -71,7 +71,7 @@ const TopTransaction = ({ state }) => {
       <StyledTop>
         <Title secondary>{transaction.title}</Title>
         <StyledCurrency>
-          <p>€ {transaction.euro}</p>
+          <p>€ {Math.round(transaction.euro * 100) / 100}</p>
           <p>PLN {Math.round(transaction.euro * pln * 100) / 100}</p>
         </StyledCurrency>
       </StyledTop>

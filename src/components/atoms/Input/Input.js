@@ -39,9 +39,18 @@ const StyledInput = styled.input`
   font-size: ${({ theme }) => theme.fontSize.xs};
   border: none;
   line-height: 22px;
-  max-width: 100%;
+  max-width: 85%;
   background: none;
   margin: 10px;
+
+  ${({ secondary }) =>
+    secondary &&
+    css`
+      max-width: 55%;
+      @media (max-width: 768px) {
+        max-width: 85%;
+      }
+    `}
 
   :focus {
     outline: none;
@@ -61,9 +70,17 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ type, name, label, long, ...props }) => (
+const Input = ({ type, name, label, long, secondary, ...props }) => (
   <StyledWrapper long={long}>
-    <StyledInput type={type} name={name} id={name} required placeholder=" " {...props} />
+    <StyledInput
+      type={type}
+      name={name}
+      id={name}
+      secondary={secondary}
+      required
+      placeholder=" "
+      {...props}
+    />
     <StyledLabel htmlFor={name}>{label}</StyledLabel>
     <StyledBar />
   </StyledWrapper>
@@ -74,10 +91,12 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   long: PropTypes.bool,
+  secondary: PropTypes.bool,
 };
 
 Input.defaultProps = {
   long: false,
+  secondary: false,
 };
 
 export default Input;

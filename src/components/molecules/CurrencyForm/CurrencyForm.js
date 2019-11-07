@@ -131,7 +131,9 @@ const CurrencyForm = ({ changeValue }) => (
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.pln}
+              step="0.01"
               label="PLN"
+              secondary
               required
             />
           </StyledFields>

@@ -65,7 +65,7 @@ const ValueSummary = ({ state }) => {
     <StyledTransaction data-testid="value-1">
       <Title>Suma transakcji:</Title>
       <StyledCurrency>
-        <p>€ {transaction.euro}</p>
+        <p>€ {Math.round(transaction.euro * 100) / 100}</p>
         <p>PLN {Math.round(transaction.euro * pln * 100) / 100}</p>
       </StyledCurrency>
     </StyledTransaction>
